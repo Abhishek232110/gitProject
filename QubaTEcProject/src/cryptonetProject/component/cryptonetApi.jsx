@@ -44,8 +44,8 @@ export function CryptonetApi() {
                     <p className="font-semibold my-2">Register Information</p>
                     <div>Age : {ele.registered.age}</div>
                     <div>Date : {ele.registered.date}</div>
-                    <p>Age : {ele.dob.age}</p>
-                    <p>Date of Birth : {ele.dob.date}</p>
+                    {/* <p>Age : {ele.dob.age}</p>
+                    <p>Date of Birth : {ele.dob.date}</p> */}
                   </div>
                   <div className="   ">
                     <p className="my-3 font-semibold">Address :</p>
