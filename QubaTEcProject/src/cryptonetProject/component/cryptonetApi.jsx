@@ -7,7 +7,7 @@ export function CryptonetApi() {
   }
   const { results, info } = data;
 
-  console.log(info);
+  //   console.log(results);
   return (
     <div className="bg-stone-300 h-full">
       <div className="flex justify-center ">
@@ -15,20 +15,20 @@ export function CryptonetApi() {
           ? results.map((ele) => {
               return (
                 <div className="bg-white py-5 px-10 grid gap-y-3 grid-cols-1 divide-y">
-                  <div className="flex">
-                    <img src={ele.picture.large}></img>
-                    <img src={ele.picture.medium}></img>
-                    <img src={ele.picture.thumbnail}></img>
-                  </div>
-                  <div>
-                    <div className="flex space-x-1 ">
-                      <p>Name : </p>
-                      <p>{ele.name.title}</p>
-                      <p>{ele.name.first}</p>
-                      <p>{ele.name.last}</p>
+                  <div className="flex shadow-md rounded-sm p-10 bg-zinc-100 justify-evenly">
+                    <div>
+                      <img src={ele.picture.large}></img>
                     </div>
-                    <p>Age : {ele.dob.age}</p>
-                    <p>Date of Birth : {ele.dob.date}</p>
+                    <div className="pt-4 space-y-3">
+                      <div className="flex space-x-1 ">
+                        <p>Name : </p>
+                        <p>{ele.name.title}</p>
+                        <p>{ele.name.first}</p>
+                        <p>{ele.name.last}</p>
+                      </div>
+                      <p>Gender : {ele.gender}</p>
+                      <p>Phone Number : {ele.phone}</p>
+                    </div>
                   </div>
                   <div className="grid grid-col-1 gap-1 ">
                     <p className="font-semibold my-2">Login Information :</p>
@@ -44,6 +44,8 @@ export function CryptonetApi() {
                     <p className="font-semibold my-2">Register Information</p>
                     <div>Age : {ele.registered.age}</div>
                     <div>Date : {ele.registered.date}</div>
+                    <p>Age : {ele.dob.age}</p>
+                    <p>Date of Birth : {ele.dob.date}</p>
                   </div>
                   <div className="   ">
                     <p className="my-3 font-semibold">Address :</p>
