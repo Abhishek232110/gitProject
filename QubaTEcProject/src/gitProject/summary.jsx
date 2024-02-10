@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-export default function SummaryMovie() {
+export function SummaryMovie() {
   const user = useSelector((state) => state.team.users);
   const param = useParams();
   const { id } = param;
