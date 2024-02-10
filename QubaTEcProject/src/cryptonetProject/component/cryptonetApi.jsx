@@ -10,11 +10,11 @@ export function CryptonetApi() {
   console.log(info);
   return (
     <div className="bg-stone-300 h-full">
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         {loading === "success"
           ? results.map((ele) => {
               return (
-                <div className="bg-white  px-10 grid gap-y-3 grid-cols-1 divide-y">
+                <div className="bg-white py-5 px-10 grid gap-y-3 grid-cols-1 divide-y">
                   <div className="flex">
                     <img src={ele.picture.large}></img>
                     <img src={ele.picture.medium}></img>
