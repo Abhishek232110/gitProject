@@ -59,7 +59,9 @@ export function CryptonetApi() {
                       <p> State: {ele.location.state}</p>
                       <p>Country : {ele.location.country}</p>
                       <p> Latitude: {ele.location.timezone.description}</p>
-                      <p> Longitude: {ele.location.timezone.offset}</p>
+                      <p className="px-3">
+                        Longitude: {ele.location.timezone.offset}
+                      </p>
                     </div>
                   </div>
                   <br />
