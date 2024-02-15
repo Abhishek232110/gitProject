@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-
-export default function AppRoutes() {
+import CryptonrtProject from "./index";
+export default function CryptonetRoute() {
   return (
     <>
       <Routes>
