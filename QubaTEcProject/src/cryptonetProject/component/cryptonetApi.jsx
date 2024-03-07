@@ -1,12 +1,20 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cryptonetApi } from "../cryptonetSlice";
+import { useEffect, useState } from "react";
 
 export function CryptonetApi() {
+   const dispatch = useDispatch();
+   const[datas, setDatas] = useState(0);
   const { data, loading } = useSelector((state) => state.cryptonet);
   if (loading === "Success") {
     return data;
   }
+  
   const { results, info } = data;
-
+const changeData=()=>{
+  dispatch(cryptonetApi(datas))
+  setDatas(datas+1);
+}
   //   console.log(results);
   return (
     <div className="bg-stone-300 h-full">
@@ -47,37 +55,15 @@ export function CryptonetApi() {
                     {/* <p>Age : {ele.dob.age}</p>
                     <p>Date of Birth : {ele.dob.date}</p> */}
                   </div>
-                  <div className="   ">
-                    <p className="my-3 font-semibold">Address :</p>
-                    <div className="grid grid-cols-2 gap-y-2">
-                      <p> Name: {ele.location.street.name}</p>
-                      <p>Number : {ele.location.street.number}</p>
-                      <p> Postcode: {ele.location.postcode}</p>
-                      <p>City : {ele.location.city}</p>
-                      <p> State: {ele.location.state}</p>
-                      <p>Country : {ele.location.country}</p>
-                      <p> State: {ele.location.state}</p>
-                      <p>Country : {ele.location.country}</p>
-                      <p> Latitude: {ele.location.timezone.description}</p>
-                      <p className="px-3">
-                        Longitude: {ele.location.timezone.offset}
-                      </p>
-                    </div>
-                  </div>
+                 <div><button onClick={changeData}>Next</button></div>
                   <br />
+                  <p>{datas}</p>
                 </div>
               );
             })
           : null}
       </div>
-      {/* <div className="flex justify-center ">
-        <div px-10 grid gap-y-4 grid-cols-1 divide-y>
-          <div>{info.seed}</div>
-          <div>{info.page}</div>
-          <div>{info.results}</div>
-          <div>{info.version}</div>
-        </div>
-      </div> */}
+  
     </div>
   );
 }

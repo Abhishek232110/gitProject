@@ -6,9 +6,11 @@ const initialState = {
   error: null,
 };
 
-export const cryptonetApi = createAsyncThunk("cryptonetApi", async () => {
+export const cryptonetApi = createAsyncThunk(
+  "cryptonetApi", 
+  async (datas) => {
   const response = await axios.get(
-    "https://randomuser.me/api/?page=1&results=1&seed=abc"
+    `https://randomuser.me/api/?page=${datas}&results=1&seed=abc`
   );
   // console.log(response.data);
   return response.data;
